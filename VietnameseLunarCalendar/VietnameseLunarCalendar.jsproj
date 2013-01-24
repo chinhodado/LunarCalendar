@@ -53,14 +53,25 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="amlich-hnd.js" />
+    <Content Include="css\calendar.css" />
+    <Content Include="css\custom_1.css" />
+    <Content Include="css\demo.css" />
     <Content Include="default.html" />
+    <Content Include="font\fontawesome-selected.eot" />
+    <Content Include="font\fontawesome-selected.svg" />
+    <Content Include="font\fontawesome-selected.ttf" />
+    <Content Include="font\fontawesome-selected.woff" />
+    <Content Include="images\bg.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />
+    <Content Include="js\amlich-hnd.js" />
+    <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
+    <Content Include="js\jquery.calendario.js" />
+    <Content Include="js\jquery.min.js" />
     <None Include="VietnameseLunarCalendar_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
