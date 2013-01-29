@@ -2,6 +2,8 @@ LunarCalendar
 =============
 ####A Vietnamese Lunar Calendar app for ModernUI 
 
+[Demo] (http://chinhodado.github.com/lunarcalendar-demo.html)
+
 With resources taken from:
 
  - Calendario: 
