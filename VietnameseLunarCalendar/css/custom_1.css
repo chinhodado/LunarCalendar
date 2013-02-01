@@ -249,6 +249,7 @@
 @media screen and (max-width: 880px) , screen and (max-height: 450px) {
 	html, body, .container {
 		//height:auto;
+        overflow:auto;
 	}
 
 	.custom-header,
