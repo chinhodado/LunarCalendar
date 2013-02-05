@@ -17,7 +17,7 @@
     <Application Id="App" StartPage="default.html">
       <VisualElements DisplayName="Vietnamese Lunar Calendar" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="A Vietnamese Lunar Calendar app" ForegroundText="light" BackgroundColor="#ef7950">
         <DefaultTile ShowName="allLogos" />
-        <SplashScreen Image="images\splashscreen.png" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#ef7950" />
         <InitialRotationPreference>
           <Rotation Preference="portrait" />
           <Rotation Preference="landscape" />

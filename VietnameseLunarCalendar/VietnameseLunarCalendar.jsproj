@@ -62,9 +62,9 @@
     <Content Include="font\fontawesome-selected.ttf" />
     <Content Include="font\fontawesome-selected.woff" />
     <Content Include="images\bg.jpg" />
-    <Content Include="images\logo.png" />
+    <Content Include="images\logo.scale-100.png" />
     <Content Include="images\smalllogo.png" />
-    <Content Include="images\splashscreen.png" />
+    <Content Include="images\splashscreen.scale-100.png" />
     <Content Include="images\storelogo.png" />
     <Content Include="js\amlich-hnd.js" />
     <Content Include="js\data.js" />
