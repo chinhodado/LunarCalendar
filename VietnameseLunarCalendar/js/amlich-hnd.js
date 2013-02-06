@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright 2004 Ho Ngoc Duc [http://come.to/duc]. All Rights Reserved.<p>
  * Permission to use, copy, modify, and redistribute this software and its
  * documentation for personal, non-commercial use is hereby granted provided that
