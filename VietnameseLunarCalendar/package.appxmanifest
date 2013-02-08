@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="13199chin.bimbo.mlichVitNam" Version="1.0.0.1" Publisher="CN=B6DF5D1D-A392-4736-9F08-9A7CC889E45D" />
+  <Identity Name="13199chin.bimbo.mlichVitNam" Version="1.0.0.2" Publisher="CN=B6DF5D1D-A392-4736-9F08-9A7CC889E45D" />
   <Properties>
     <DisplayName>Vietnamese Lunar Calendar</DisplayName>
     <PublisherDisplayName>chin.bimbo</PublisherDisplayName>
@@ -27,7 +27,4 @@
       </VisualElements>
     </Application>
   </Applications>
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>
