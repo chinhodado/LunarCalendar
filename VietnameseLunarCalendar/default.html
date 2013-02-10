@@ -80,11 +80,21 @@
 
             var cal = $('#calendar').calendario({
                 onDayClick: function ($el, $contentEl, dateProperties) {
+                    //the solar stuffs
+                    var currentSolarDay = parseInt(dateProperties['day']);
+                    var currentSolarMonth = parseInt(dateProperties['month']);
+                    var currentSolarYear = cal.getYear();
+                    //to lunar
+                    var lunarDate = getLunarDate(currentSolarDay, currentSolarMonth, currentSolarYear);
+                    //get the day info
+                    var dayInfo = getDayInfo(lunarDate.day, lunarDate.month, lunarDate.year, lunarDate.leap, lunarDate.jd, currentSolarDay, currentSolarMonth, currentSolarYear);
+                    //display dialog
+                    var md = new Windows.UI.Popups.MessageDialog(dayInfo);
+                    md.showAsync();
 
-                    for (var key in dateProperties) {
-                        console.log(key + ' = ' + dateProperties[key]);
-                    }
-
+                    //for (var key in dateProperties) {
+                    //    console.log(key + ' = ' + dateProperties[key]);
+                    //}
                 },
                 caldata: codropsEvents
             }),
@@ -108,6 +118,6 @@
             }
             displayLunar(cal);
         });
-		</script>
+    </script>
 </body>
 </html>

@@ -172,6 +172,7 @@ function getYearInfo(yyyy) {
 var FIRST_DAY = jdn(25, 1, 1800); // Tet am lich 1800
 var LAST_DAY = jdn(31, 12, 2199);
 
+//find lunar date from julian day and leap year
 function findLunarDate(jd, ly) {
 	if (jd > LAST_DAY || jd < FIRST_DAY || ly[0].jd > jd) {
 		return new LunarDate(0, 0, 0, 0, jd);
@@ -185,6 +186,7 @@ function findLunarDate(jd, ly) {
 	return ret;
 }
 
+//get lunar date from solar dd/mm/yyyy
 function getLunarDate(dd, mm, yyyy) {
 	var ly, jd;
 	if (yyyy < 1800 || 2199 < yyyy) {
@@ -596,7 +598,7 @@ function infoCellSelect(id) {
 	}
 }
 
-function alertDayInfo(dd, mm, yy, leap, jd, sday, smonth, syear) {
+function getDayInfo(dd, mm, yy, leap, jd, sday, smonth, syear) {
 	var lunar = new LunarDate(dd, mm, yy, leap, jd);
 	var s = getDayString(lunar, sday, smonth, syear);
 	s += " \u00E2m l\u1ECBch\n";
@@ -604,7 +606,7 @@ function alertDayInfo(dd, mm, yy, leap, jd, sday, smonth, syear) {
 	s += "\nGi\u1EDD \u0111\u1EA7u ng\u00E0y: "+getCanHour0(jd)+" "+CHI[0];
 	s += "\nTi\u1EBFt: "+TIETKHI[getSunLongitude(jd+1, 7.0)];
 	s += "\nGi\u1EDD ho\u00E0ng \u0111\u1EA1o: "+getGioHoangDao(jd);
-	alert(s);
+	return s;
 }
 
 function alertAbout() {
@@ -615,5 +617,3 @@ function showVietCal() {
 	window.status = getCurrentTime() + " -+- " + getTodayString();
 	window.window.setTimeout("showVietCal()",5000);
 }
-
-//showVietCal();
