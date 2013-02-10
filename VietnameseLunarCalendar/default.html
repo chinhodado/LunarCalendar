@@ -25,36 +25,7 @@
     <script src="js/jquery.calendario.js"></script>
     <script src="js/data.js"></script>
     <script src="js/amlich-hnd.js"></script>
-    <script>
-        function zeroFill(number, width) {
-            width -= number.toString().length;
-            if (width > 0) {
-                return new Array(width + (/\./.test(number) ? 2 : 1)).join('0') + number;
-            }
-            return number + ""; // always return a string
-        }
-        function displayLunar(cal) {
-            var currentYear = cal.getYear();
-            var currentMonth = zeroFill(cal.getMonth(), 2);//string with leading zeros
-            var timeZone = 7;//GMT +7: Hanoi
-            var dayArray = new Array(32);//solar array
-            var lunarArray = new Array(32);
-            var obj = {};
-            var numday = 28;
-            if (currentYear % 4 != 0 && currentMonth == '02') numday = 28;
-            else if (currentYear % 4 == 0 && currentMonth == '02') numday = 29;
-            else if (currentMonth == '01' || currentMonth == '03' || currentMonth == '05' || currentMonth == '07' || currentMonth == '08' || currentMonth == '10' || currentMonth == '12') numday = 31;
-            else numday = 30;
-            for (var i = 1; i <= numday; i++) {
-                var j = zeroFill(i, 2);
-                dayArray[i] = currentMonth + '-' + j + '-' + currentYear;
-                lunarArray[i] = getLunarDate(i, cal.getMonth(), currentYear);
-                obj[dayArray[i]] = lunarArray[i].day + '/' + lunarArray[i].month;
-                cal.setData(obj);
-            }
-        }
-    </script>
-
+    <script src="js/script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -74,10 +45,8 @@
             <div id="calendar" class="fc-calendar-container"></div>
         </div>
     </div>
-
     <script type="text/javascript">
         $(function () {
-
             var cal = $('#calendar').calendario({
                 onDayClick: function ($el, $contentEl, dateProperties) {
                     //the solar stuffs
@@ -117,6 +86,7 @@
                 displayLunar(cal);
             }
             displayLunar(cal);
+            liveTile(cal);//display the live tile
         });
     </script>
 </body>

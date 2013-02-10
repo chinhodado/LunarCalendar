@@ -75,6 +75,7 @@
     <Content Include="css\default.css" />
     <Content Include="js\jquery.calendario.js" />
     <Content Include="js\jquery.min.js" />
+    <Content Include="js\script.js" />
     <None Include="VietnameseLunarCalendar_StoreKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
     <None Include="VietnameseLunarCalendar_TemporaryKey.pfx" />
