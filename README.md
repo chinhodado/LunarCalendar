@@ -1,4 +1,4 @@
-LunarCalendar
+Lunar Calendar
 =============
 ####A Vietnamese Lunar Calendar app for ModernUI 
 
