@@ -4,4 +4,4 @@ Lunar Calendar
 
 [Demo] (http://chinhodado.github.com/lunarcalendar-demo.html)
 
-With resources taken from: [Calendario] (http://tympanus.net/codrops/2012/11/27/calendario-a-flexible-calendar-plugin/), [Ho Ngoc Duc's Lunar Calendar] (http://www.informatik.uni-leipzig.de/~duc/amlich/JavaScript/?yy=2009&mm=2), [background image] (http://www.icondeposit.com/design:132)
+With resources taken from: [Calendario] (http://tympanus.net/codrops/2012/11/27/calendario-a-flexible-calendar-plugin/), [Ho Ngoc Duc's Lunar Calendar] (http://www.informatik.uni-leipzig.de/~duc/amlich/JavaScript/?yy=2009&mm=2), [background image] (http://www.icondeposit.com/design:132), [icon] (http://aristeides.com/elusive-iconfont/)
