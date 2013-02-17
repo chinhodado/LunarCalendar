@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Vietnamese Lunar Calendar" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="A Vietnamese Lunar Calendar app" ForegroundText="light" BackgroundColor="#ef7950">
+      <VisualElements DisplayName="Vietnamese Lunar Calendar" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="A Vietnamese Lunar Calendar app" ForegroundText="light" BackgroundColor="#85c653">
         <DefaultTile ShowName="allLogos" WideLogo="images\WideLogo.png" />
-        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#ef7950" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#85c653" />
         <InitialRotationPreference>
           <Rotation Preference="portrait" />
           <Rotation Preference="landscape" />
@@ -25,6 +25,13 @@
           <Rotation Preference="landscapeFlipped" />
         </InitialRotationPreference>
       </VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" StartPage="js\bgtask.js">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
 </Package>

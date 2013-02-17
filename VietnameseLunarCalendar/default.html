@@ -86,7 +86,11 @@
                 displayLunar(cal);
             }
             displayLunar(cal);
-            liveTile(cal);//display the live tile
+            //liveTile(cal);//display the live tile
+            registerBackgroundTask("js\\bgtask.js",
+                                   "UpdateTileBackgroundTask",
+                                    new Windows.ApplicationModel.Background.SystemTrigger(Windows.ApplicationModel.Background.SystemTriggerType.timeZoneChange, false),
+                                    null);
         });
     </script>
 </body>

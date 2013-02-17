@@ -46,10 +46,48 @@ function displayLunar(cal) {
     }
 }
 
+//add zeros to beginning of number
 function zeroFill(number, width) {
     width -= number.toString().length;
     if (width > 0) {
         return new Array(width + (/\./.test(number) ? 2 : 1)).join('0') + number;
     }
     return number + ""; // always return a string
+}
+
+//register a background task
+function registerBackgroundTask(taskEntryPoint, taskName, trigger, condition) {
+
+    // Check for existing registrations of this background task.
+    var taskRegistered = false;
+    var background = Windows.ApplicationModel.Background;
+    var iter = background.BackgroundTaskRegistration.allTasks.first();
+    var hascur = iter.hasCurrent;
+
+    while (hascur) {
+        var cur = iter.current.value;
+        if (cur.name === taskName) {
+            taskRegistered = true;
+            break;
+        }
+        hascur = iter.moveNext();
+    }
+
+    // If the task is already registered, return the registration object.
+    if (taskRegistered == true) {
+        return iter.current;
+    }
+
+    // Register the background task.
+    var builder = new Windows.ApplicationModel.Background.BackgroundTaskBuilder();
+    builder.name = taskName;
+    builder.taskEntryPoint = taskEntryPoint;
+    builder.setTrigger(trigger);
+
+    if (condition !== null) {
+        builder.addCondition(condition);
+    }
+
+    var task = builder.register();
+    return task;
 }
