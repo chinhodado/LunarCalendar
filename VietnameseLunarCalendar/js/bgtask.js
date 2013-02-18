@@ -34,9 +34,7 @@
             // get the text attributes for this template and fill them in
             var tileAttributes = tileXml.getElementsByTagName("text");
 
-            var title = "Tile Updated At";
             tileAttributes[0].appendChild(tileXml.createTextNode(dayInfo));
-            //tileAttributes[1].appendChild(tileXml.createTextNode(dayInfo));
 
             // create the notification from the XML
             var tileNotification = new notifications.TileNotification(tileXml);
