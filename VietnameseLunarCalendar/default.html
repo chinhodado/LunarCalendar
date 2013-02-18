@@ -87,9 +87,12 @@
             }
             displayLunar(cal);
             //liveTile(cal);//display the live tile
+
+            //register the background task. Note that I used InternetAvailable here instead of TimeTrigger
+            //since TimeTrigger requires user to put the app on the lock screen, which I don't want to
             registerBackgroundTask("js\\bgtask.js",
                                    "UpdateTileBackgroundTask",
-                                    new Windows.ApplicationModel.Background.SystemTrigger(Windows.ApplicationModel.Background.SystemTriggerType.timeZoneChange, false),
+                                    new Windows.ApplicationModel.Background.SystemTrigger(Windows.ApplicationModel.Background.SystemTriggerType.internetAvailable, false),
                                     null);
         });
     </script>
