@@ -174,9 +174,9 @@ var LAST_DAY = jdn(31, 12, 2199);
 
 //find lunar date from julian day and leap year
 function findLunarDate(jd, ly) {
-	if (jd > LAST_DAY || jd < FIRST_DAY || ly[0].jd > jd) {
-		return new LunarDate(0, 0, 0, 0, jd);
-	}
+	//if (jd > LAST_DAY || jd < FIRST_DAY || ly[0].jd > jd) {
+	//	return new LunarDate(0, 0, 0, 0, jd);
+	//}
 	var i = ly.length-1;
 	while (jd < ly[i].jd) {
 		i--;

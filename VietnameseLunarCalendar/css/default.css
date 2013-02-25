@@ -1,4 +1,18 @@
-﻿body {
+﻿input[type=text], input[type=password], input[type=email], input[type=number],
+input[type=tel], input[type=url], input[type=search] {
+    width: 70px;
+    padding: 0;
+}
+
+.chinLabel {
+    color:#fff;
+}
+
+.chinButton {
+    min-width: 10px;
+}
+
+body {
 }
 
 @media screen and (-ms-view-state: fullscreen-landscape) {

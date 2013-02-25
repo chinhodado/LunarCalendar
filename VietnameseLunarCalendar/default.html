@@ -29,6 +29,24 @@
 </head>
 <body>
     <div class="container">
+    	<select id="monthSelect" style="position: relative; width: 80px; height: 32px; left: 703.5px; top: 34.5px;">
+    		<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+		</select>
+    	<input class="chin" id="yearBox" type="text" style="position: relative; height: 32px; left: 787.5px; top: 34.5px;">
+    	<label class="chinLabel" style="position: relative; left: 463.5px; top: 36px;">MONTH</label>
+    	<label class="chinLabel" style="position: relative; left: 591px; top: 36px;">YEAR</label>
+    	<button class="chinButton" type="button" id="goButton" style="position: relative; width: 48px; height: 32px; left: 696px; top: 34.5px;">Go</button>
         <div class="custom-calendar-wrap custom-calendar-full">
             <div class="custom-header clearfix">
                 <h2>Vietnamese Lunar Calendar</h2>
@@ -44,6 +62,7 @@
             </div>
             <div id="calendar" class="fc-calendar-container"></div>
         </div>
+
     </div>
     <script type="text/javascript">
         $(function () {
@@ -80,12 +99,24 @@
                 cal.gotoNow(updateMonthYear);
             });
 
+            $('#goButton').click(function () {
+                var month = $("#monthSelect").val() - 1;
+                var year = parseInt($("#yearBox").val());
+                $month.html(convertMonthToWord(month+1));
+                $year.html(year);
+                cal.goto(month, year, null);
+                displayLunar(cal);
+            });
+
             function updateMonthYear() {
                 $month.html(cal.getMonthName());
                 $year.html(cal.getYear());
-                displayLunar(cal);
+                displayLunar(cal);//display the lunar information
+                $("#yearBox").val(cal.getYear());//update the year text box
+                $("#monthSelect").val(cal.getMonth());//update the month select box
             }
-            displayLunar(cal);
+            updateMonthYear();
+            //displayLunar(cal);
             //liveTile(cal);//display the live tile
 
             //register the background task. Use MaintenanceTrigger
