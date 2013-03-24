@@ -1,11 +1,9 @@
 /* General Demo Style */
 html { height: 100%; }
 
-*,
-*:after,
-*:before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+.container *,
+.container *:after,
+.container *:before {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
@@ -28,7 +26,7 @@ html { height: 100%; }
 
 body {
     font-family: Lato, Arial, sans-serif;
-    background: #f9f9f9 url(../images/bg.jpg);
+    background: #f9f9f9 url(../images/bg2.jpg);
     font-weight: 300;
     font-size: 15px;
     color: #333;
@@ -135,3 +133,4 @@ a {
 .fc-content > div {
     visibility: hidden;
 }
+

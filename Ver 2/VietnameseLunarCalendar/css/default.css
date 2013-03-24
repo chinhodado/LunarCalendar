@@ -4,12 +4,9 @@ input[type=tel], input[type=url], input[type=search] {
     padding: 0;
 }
 
-.chinLabel {
-    color:#fff;
-}
-
-.chinButton {
-    min-width: 10px;
+.chinContent {
+    font-family: 'Helvetica World';
+    src: url('helw.ttf');
 }
 
 body {

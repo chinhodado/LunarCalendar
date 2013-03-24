@@ -13,11 +13,18 @@
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
                 // TODO: This application has been newly launched. Initialize
                 // your application here.
+
             } else {
                 // TODO: This application has been reactivated from suspension.
                 // Restore application state here.
             }
-            args.setPromise(WinJS.UI.processAll());
+            args.setPromise(WinJS.UI.processAll().then(function () {
+                WinJS.Application.onsettings = function (e) {
+                    e.detail.applicationcommands =
+                       { "preferences": { title: "Preferences", href: "preferences.html" } };
+                    WinJS.UI.SettingsFlyout.populateSettings(e);
+                };
+            }));
         }
     };
 
@@ -29,6 +36,8 @@
         // asynchronous operation before your application is suspended, call
         // args.setPromise().
     };
+
+
 
     app.start();
 })();

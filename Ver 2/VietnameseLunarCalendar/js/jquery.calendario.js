@@ -1,4 +1,4 @@
-/**
+﻿/**
  * jquery.calendario.js v1.0.0
  * http://www.codrops.com
  *
@@ -16,7 +16,7 @@
  * this copyright notice appears in all copies.
  */
 
-var ABOUT = "�m l?ch Vi?t Nam - Version 0.8" + "\n� 2004 H? Ng?c ??c [http://come.to/duc]";
+var ABOUT = "Âm lịch Việt Nam - Version 0.8" + "\n© 2004 Hồ Ngọc Đức [http://come.to/duc]";
 var TK19 = new Array(
 	0x30baa3, 0x56ab50, 0x422ba0, 0x2cab61, 0x52a370, 0x3c51e8, 0x60d160, 0x4ae4b0, 0x376926, 0x58daa0,
 	0x445b50, 0x3116d2, 0x562ae0, 0x3ea2e0, 0x28e2d2, 0x4ec950, 0x38d556, 0x5cb520, 0x46b690, 0x325da4,
@@ -69,14 +69,14 @@ var TK22 = new Array(
 		0x465aa0, 0x30ada5, 0x5695d0, 0x404ad0, 0x2aa9b3, 0x50a4d0, 0x3ad2b7, 0x5eb250, 0x48b540, 0x33d556
 ); /* Years 2100-2199 */
 
-var CAN = new Array("Gi�p", "?t", "B�nh", "?inh", "M?u", "K?", "Canh", "T�n", "Nh�m", "Qu�");
-var CHI = new Array("T�", "S?u", "D?n", "M�o", "Th�n", "T?", "Ng?", "M�i", "Th�n", "D?u", "Tu?t", "H?i");
-var TUAN = new Array("Ch? nh?t", "Th? hai", "Th? ba", "Th? t?", "Th? n?m", "Th? s�u", "Th? b?y");
+var CAN = new Array("Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý");
+var CHI = new Array("Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi");
+var TUAN = new Array("Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy");
 var GIO_HD = new Array("110100101100", "001101001011", "110011010010", "101100110100", "001011001101", "010010110011");
-var TIETKHI = new Array("Xu�n ph�n", "Thanh minh", "C?c v?", "L?p h?", "Ti?u m�n", "Mang ch?ng",
-	"H? ch�", "Ti?u th?", "??i th?", "L?p thu", "X? th?", "B?ch l?",
-	"Thu ph�n", "H�n l?", "S??ng gi�ng", "L?p ?�ng", "Ti?u tuy?t", "??i tuy?t",
-	"?�ng ch�", "Ti?u h�n", "??i h�n", "L?p xu�n", "V? Th?y", "Kinh tr?p"
+var TIETKHI = new Array("Xuân phân", "Thanh minh", "Cốc vũ", "Lập hạ", "Tiểu mãn", "Mang chủng",
+	"Hạ chí", "Tiểu thử", "Đại thử", "Lập thu", "Xử thử", "Bạch lộ",
+	"Thu phân", "Hàn lộ", "Sương giáng", "Lập đông", "Tiểu tuyết", "Đại tuyết",
+	"Đông chí", "Tiểu hàn", "Đại hàn", "Lập xuân", "Vũ Thủy", "Kinh trập"
 );
 
 /* Create lunar date object, stores (lunar) date, month, year, leap month indicator, and Julian date number */
@@ -319,7 +319,7 @@ function getDayName(lunarDate) {
         return "";
     }
     var cc = getCanChi(lunarDate);
-    var s = "Ng�y " + cc[0] + ", th�ng " + cc[1] + ", n?m " + cc[2];
+    var s = "Ngày " + cc[0] + ", tháng " + cc[1] + ", năm " + cc[2];
     return s;
 }
 
@@ -339,7 +339,7 @@ function getCanChi(lunar) {
     dayName = CAN[(lunar.jd + 9) % 10] + " " + CHI[(lunar.jd + 1) % 12];
     monthName = CAN[(lunar.year * 12 + lunar.month + 3) % 10] + " " + CHI[(lunar.month + 1) % 12];
     if (lunar.leap == 1) {
-        monthName += " (nhu?n)";
+        monthName += " (nhuận)";
     }
     yearName = getYearCanChi(lunar.year);
     return new Array(dayName, monthName, yearName);
@@ -350,9 +350,9 @@ function getDayString(lunar, solarDay, solarMonth, solarYear) {
     var dayOfWeek = TUAN[(lunar.jd + 1) % 7];
     s = dayOfWeek + " " + solarDay + "/" + solarMonth + "/" + solarYear;
     s += " -+- ";
-    s = s + "Ng�y " + lunar.day + " th�ng " + lunar.month;
+    s = s + "Ngày " + lunar.day + " tháng " + lunar.month;
     if (lunar.leap == 1) {
-        s = s + " nhu?n";
+        s = s + " nhuận";
     }
     return s;
 }
@@ -360,16 +360,16 @@ function getDayString(lunar, solarDay, solarMonth, solarYear) {
 function getDayStringLunarOnly(lunar, solarDay, solarMonth, solarYear) {
     var s;
     var dayOfWeek = TUAN[(lunar.jd + 1) % 7];
-    s = "Ng�y " + lunar.day + " th�ng " + lunar.month;
+    s = "Ngày " + lunar.day + " tháng " + lunar.month;
     if (lunar.leap == 1) {
-        s = s + " nhu?n";
+        s = s + " nhuận";
     }
     return s;
 }
 
 function getTodayString() {
     var s = getDayString(currentLunarDate, today.getDate(), today.getMonth() + 1, today.getFullYear());
-    s += " n?m " + getYearCanChi(currentLunarDate.year);
+    s += " năm " + getYearCanChi(currentLunarDate.year);
     return s;
 }
 
@@ -399,26 +399,6 @@ function getGioHoangDao(jd) {
         }
     }
     return ret;
-}
-
-function getDayInfo(dd, mm, yy, leap, jd, sday, smonth, syear) {
-    var lunar = new LunarDate(dd, mm, yy, leap, jd);
-    var s = getDayString(lunar, sday, smonth, syear);
-    s += " �m l?ch\n";
-    s += getDayName(lunar);
-    s += "\nGi? ??u ng�y: " + getCanHour0(jd) + " " + CHI[0];
-    s += "\nTi?t: " + TIETKHI[getSunLongitude(jd + 1, 7.0)];
-    s += "\nGi? ho�ng ??o: " + getGioHoangDao(jd);
-    return s;
-}
-
-function getDayInfoCompact(dd, mm, yy, leap, jd, sday, smonth, syear) {
-    var lunar = new LunarDate(dd, mm, yy, leap, jd);
-    var s = getDayStringLunarOnly(lunar, sday, smonth, syear);
-    s += " �m l?ch \n";
-    s += getDayName(lunar);
-    s += "\nTi?t: " + TIETKHI[getSunLongitude(jd + 1, 7.0)];
-    return s;
 }
 
 ;( function( $, window, undefined ) {

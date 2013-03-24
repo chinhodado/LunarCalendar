@@ -58,12 +58,14 @@
     <Content Include="css\calendar.css" />
     <Content Include="css\custom_2.css" />
     <Content Include="css\demo.css" />
-    <Content Include="default.html" />
     <Content Include="font\fontawesome-selected.eot" />
     <Content Include="font\fontawesome-selected.svg" />
     <Content Include="font\fontawesome-selected.ttf" />
     <Content Include="font\fontawesome-selected.woff" />
+    <Content Include="helw.ttf" />
     <Content Include="images\bg.jpg" />
+    <Content Include="images\bg2.jpg" />
+    <Content Include="images\bg3.jpg" />
     <Content Include="images\logo.scale-100.png" />
     <Content Include="images\smalllogo.scale-100.png" />
     <Content Include="images\splashscreen.scale-100.png" />
@@ -75,9 +77,10 @@
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
+    <Content Include="js\jquery-1.8.0-windows8-ready.js" />
     <Content Include="js\jquery.calendario.js" />
-    <Content Include="js\jquery.min.js" />
     <Content Include="js\script.js" />
+    <Content Include="preferences.html" />
     <None Include="VietnameseLunarCalendar_StoreKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
     <None Include="VietnameseLunarCalendar_TemporaryKey.pfx" />

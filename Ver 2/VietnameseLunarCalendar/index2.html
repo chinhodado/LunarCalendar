@@ -7,20 +7,22 @@
     <title>lunar v2</title>
     
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+
     <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
 
     <!-- VietnameseLunarCalendar references -->
     <link href="/css/default.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/calendar.css" />
     <link rel="stylesheet" type="text/css" href="css/custom_2.css" />
     <script src="js/default.js"></script>
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-1.8.0-windows8-ready.js"></script>
     <script src="js/jquery.calendario.js"></script>
     <script src="js/data.js"></script>
     <script src="js/amlich-hnd.js"></script>
     <script src="js/script.js"></script>
+   
 </head>
 <body>
     <div class="container">
@@ -75,7 +77,7 @@
                 var $events = $('<div id="custom-content-reveal" class="custom-content-reveal"><h4>Events for ' + dateProperties.monthname + ' ' + dateProperties.day + ', ' + dateProperties.year + '</h4></div>'),
                     $close = $('<span class="custom-content-close"></span>').on('click', hideEvents);
 
-                $events.append('<span>' + $contentEl.html() + '</span>', $close).insertAfter($wrapper);
+                $events.append('<span class="chinContent">' + $contentEl.html() + '</span>', $close).insertAfter($wrapper);
 
                 setTimeout(function () {
                     $events.css('top', '0%');
@@ -96,6 +98,10 @@
                 setLunarInfo(cal);//set the lunar information
             }
             updateMonthYear();
+            registerBackgroundTask("js\\bgtask.js",
+                       "UpdateTileBackgroundTask",
+                        new Windows.ApplicationModel.Background.MaintenanceTrigger(15, false),
+                        null);
         });
 		</script>
 </body>

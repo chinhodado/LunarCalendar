@@ -1,0 +1,22 @@
+﻿<!doctype HTML>
+<html>
+    <head>
+        <title>Help settings flyout</title>
+    </head>
+    <body>
+        <div data-win-control="WinJS.UI.SettingsFlyout" 
+       data-win-options="{settingsCommandId:'preferences', width:'narrow'}">
+        <div class="win-ui-dark win-header">
+               <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+               <div class="win-label">Preferences</div>
+        </div>                
+        <div class="win-content ">
+          <div class="win-settings-section">
+              <h3>Default Search Tag:</h3>
+              <input id="tag" type="text">
+              <button id="save" type="button">Save</button>          
+          </div>
+     </div>
+</div>
+    </body>
+</html>
